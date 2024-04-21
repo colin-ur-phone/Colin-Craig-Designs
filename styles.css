@@ -1,0 +1,251 @@
+/* COLIN CRAIG
+================================================================== */
+
+
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: urbanist, sans-serif;
+  font-size: 18px;
+  background-color: #1E2B4B;
+  color: #A05252;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  transition: font-size 0.5s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  padding: 1em;
+  margin-bottom: 5em;
+  position: relative;
+}
+
+main {
+  padding: 1em;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+/* Typography */
+
+/*colin craig designs*/
+h1 {
+  font-size: 2.5em;
+    color: #FFF859;
+    margin: 0;
+    text-shadow: 0px 0.075em 0px #A05252;
+    line-height: 90%;
+    word-spacing: 99999px;
+    position: relative;
+}
+
+/* vertical dotted line */
+h1:before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 1.7em;
+  height: 275%;
+  width: 1px;
+  border-left: 0.125em dotted #A05252;
+  opacity: 25%;
+  z-index: -1;
+}
+
+/* horizontal dotted line */
+h1:after {
+  content: '';
+  position: absolute;
+  top: 232%; /* Adjust vertical positioning as needed */
+  left: 0; /* Align the line to the left edge of the h1 element */
+  width: 100%; /* Make the line span the entire width of the h1 element */
+  height: 1px; /* Set the height of the line to 1 pixel */
+  border-bottom: 0.125em dotted #A05252; /* Use border-bottom to create a dotted horizontal line */
+  opacity: 25%;
+  z-index: -1;
+}
+
+/*used for about header*/
+h2 {
+  color: #FFF859;
+  font-size: 1.5em;
+  margin: 1em auto;
+}
+
+/*used for work titles*/
+h3 {
+  color: #FFF859;
+  font-size: 1.5em;
+  margin: 1em auto;
+}
+
+/*used for about description and work descriptions*/
+p {
+  font-size: 1em;
+  margin: 1em auto;
+  color: #A05252;
+}
+
+
+
+/* Nav */
+
+nav {
+  display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: end;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    right: 1em;
+    padding-top: 1em;
+    gap: 0.5em;
+}
+
+
+.lightbulb {
+  background-image: url(images/lightbulb-off.png);
+  width: 5em;
+  height: 5em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  position: relative;
+}
+
+/* lightbulb string */
+
+.lightbulb:after {
+  content: '';
+  position: absolute;
+  top: -92%;
+  left: 49%;
+  width: 2px;
+  background: #a05253;
+  height: 100%;
+}
+
+.lightbulb:hover {
+  background-image: url(images/lightbulb-on.png);
+}
+
+/*This is where it says "My Work"*/
+.caption {
+  font-weight: 500;
+  color: #FFF859;
+  display: none;
+}
+
+/*arrow pointing from caption to lightbulb*/
+.arrow {
+  font-size: 3em;
+  color: #A05252;
+  display: none;
+}
+
+
+
+
+
+
+
+/* Work section */
+
+.work {
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+
+.work .grid {
+  padding-top: 1em;
+}
+
+.work img {
+  border-radius: 50%;
+  max-width: 20em;
+}
+
+
+
+
+/* Grid */
+
+.grid {
+  display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    max-width: 70em;
+    margin: 10em auto;
+}
+
+.grid > div {
+  max-width: 40em;
+}
+
+
+
+
+/* Media queries */
+
+@media (min-width: 960px) {
+
+  body {
+    font-size: 24px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+
+  .about-section {
+    margin-top: -20em;
+  }
+
+  .caption, .arrow {
+    display: block;
+  }
+
+}
+
+
+
+@media (min-width: 1400px) {
+
+  body {
+    font-size: 32px;
+  }
+
+}
